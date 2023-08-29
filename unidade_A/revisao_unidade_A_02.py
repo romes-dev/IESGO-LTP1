@@ -42,7 +42,7 @@ print(-0.0)
 # 3. Números complexos
 # 3.1. Números complexos positivos
 print("Números complexos positivos")
-print(1j)
+print(1 )
 print(1j + 1)
 
 # 3.2. Números complexos negativos
@@ -127,16 +127,16 @@ preco_item2 = float(input("Digite o preço do segundo item: R$ "))
 quantidade_item2 = int(input("Digite a quantidade do segundo item: "))
 
 # Calcular o preço total de cada item
-total_item1 = preco_item1 * quantidade_item1
-total_item2 = preco_item2 * quantidade_item2
+subtotal_item1 = preco_item1 * quantidade_item1
+subtotal_item2 = preco_item2 * quantidade_item2
 
 # Calcular o preço total da compra
-preco_total = total_item1 + total_item2
+preco_total = subtotal_item1 + subtotal_item2
 
 # Exibir os totais de cada item e o preço total da compra
 print("\nDetalhes da Compra:")
-print(f"Item 1: Preço Total = R$ {total_item1:.2f}")
-print(f"Item 2: Preço Total = R$ {total_item2:.2f}")
+print(f"Item 1: Preço Total = R$ {subtotal_item1:.2f}")
+print(f"Item 2: Preço Total = R$ {subtotal_item2:.2f}")
 print(f"Preço Total da Compra = R$ {preco_total:.2f}")
 
 
