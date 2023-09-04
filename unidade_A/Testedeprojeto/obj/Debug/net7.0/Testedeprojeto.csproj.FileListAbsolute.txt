@@ -1,0 +1,14 @@
+/Users/romes/Documents/GitHub/IESGO-LTP1/unidade_A/Testedeprojeto/bin/Debug/net7.0/Testedeprojeto
+/Users/romes/Documents/GitHub/IESGO-LTP1/unidade_A/Testedeprojeto/bin/Debug/net7.0/Testedeprojeto.deps.json
+/Users/romes/Documents/GitHub/IESGO-LTP1/unidade_A/Testedeprojeto/bin/Debug/net7.0/Testedeprojeto.runtimeconfig.json
+/Users/romes/Documents/GitHub/IESGO-LTP1/unidade_A/Testedeprojeto/bin/Debug/net7.0/Testedeprojeto.dll
+/Users/romes/Documents/GitHub/IESGO-LTP1/unidade_A/Testedeprojeto/bin/Debug/net7.0/Testedeprojeto.pdb
+/Users/romes/Documents/GitHub/IESGO-LTP1/unidade_A/Testedeprojeto/obj/Debug/net7.0/Testedeprojeto.GeneratedMSBuildEditorConfig.editorconfig
+/Users/romes/Documents/GitHub/IESGO-LTP1/unidade_A/Testedeprojeto/obj/Debug/net7.0/Testedeprojeto.AssemblyInfoInputs.cache
+/Users/romes/Documents/GitHub/IESGO-LTP1/unidade_A/Testedeprojeto/obj/Debug/net7.0/Testedeprojeto.AssemblyInfo.cs
+/Users/romes/Documents/GitHub/IESGO-LTP1/unidade_A/Testedeprojeto/obj/Debug/net7.0/Testedeprojeto.csproj.CoreCompileInputs.cache
+/Users/romes/Documents/GitHub/IESGO-LTP1/unidade_A/Testedeprojeto/obj/Debug/net7.0/Testedeprojeto.dll
+/Users/romes/Documents/GitHub/IESGO-LTP1/unidade_A/Testedeprojeto/obj/Debug/net7.0/refint/Testedeprojeto.dll
+/Users/romes/Documents/GitHub/IESGO-LTP1/unidade_A/Testedeprojeto/obj/Debug/net7.0/Testedeprojeto.pdb
+/Users/romes/Documents/GitHub/IESGO-LTP1/unidade_A/Testedeprojeto/obj/Debug/net7.0/Testedeprojeto.genruntimeconfig.cache
+/Users/romes/Documents/GitHub/IESGO-LTP1/unidade_A/Testedeprojeto/obj/Debug/net7.0/ref/Testedeprojeto.dll
