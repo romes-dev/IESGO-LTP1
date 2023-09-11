@@ -2,7 +2,42 @@
 
 # Exercício 1: Faça uma função que recebe um número e retorna True se ele é múltiplo de 5 ou False caso contrário.
 
+def multiplo_de_5(numero):
+    if numero % 5 == 0:
+        return True
+    else:
+        return False
+
+numero = int(input("Digite um número inteiro: "))
+
+if multiplo_de_5(numero):
+    print(f"O número {numero} é múltiplo de 5.")
+else:
+    print(f"O número {numero} não é múltiplo de 5.")
+
+### Duas linhas de código
+
+numero = int(input("Digite um número inteiro: "))
+print(f"O número {numero} é múltiplo de 5." if numero % 5 == 0 else f"O número {numero} não é múltiplo de 5.")
+
+    
 # Exercício 2: Faça uma função que recebe um número e imprime no console se ele é múltiplo de 5 e de 3 ou False caso contrário.
+
+def multiplo_de_5_e_3(numero):
+    if numero % 5 == 0 and numero % 3 == 0:
+        return True
+    else:
+        return False
+
+numero = int(input("Digite um número inteiro: "))
+if multiplo_de_5_e_3(numero):
+    print(f"O número {numero} é múltiplo de 5 e de 3.")
+else:
+    print(multiplo_de_5_e_3(numero))
+
+
+
+    
 
 # Exercício 3: Crie um programa em que o usuário insira uma palavra e o programa retorna se a palavra é palíndromo ou não.
 
