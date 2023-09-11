@@ -2,6 +2,62 @@
 
 # Programa que solicita ao usuário inserir um número inteiro e retorna se o número é par ou ímpar.
 
+# Programa que solicita ao usuário no console inserir um número inteiro positivo e o sistema retorna se ele é múltiplo de 5.
+    
+def multiplo_de_5(numero):
+    if numero % 5 == 0:
+        return True
+    else:
+        return False
+
+numero = int(input("Digite um número inteiro: "))
+if multiplo_de_5(numero):
+    print(f"O número {numero} é múltiplo de 5.")
+else:
+    print(f"O número {numero} não é múltiplo de 5.")
+    
+
+"""
+    
+    
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 def par_ou_impar(numero):
     if numero % 2 == 0:
         return "par"
@@ -92,3 +148,5 @@ def checagem_de_lista(lista):
 
 checagem_de_lista(lista)
 print(nova_lista)
+
+"""
