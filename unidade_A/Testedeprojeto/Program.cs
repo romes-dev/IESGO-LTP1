@@ -1,86 +1,106 @@
 ﻿using System;
 
-public class AFDMultiplosDe3
+namespace ComparacaoDeValores
 {
-    // Definição dos estados
-    private enum Estado
+    class Program
     {
-        Q0,
-        Q1,
-        Q2
-    }
-
-    private Estado estadoAtual;
-
-    public AFDMultiplosDe3()
-    {
-        estadoAtual = Estado.Q0; // Definindo o estado inicial
-    }
-
-    public bool ProcessarEntrada(string entrada)
-    {
-        foreach (char digito in entrada)
+        static void Main(string[] args)
         {
-            switch (estadoAtual)
+            Console.WriteLine("Por favor, insira sua idade:");
+            int idade = Convert.ToInt32(Console.ReadLine());
+
+            Console.WriteLine("Por favor, insira sua altura em centímetros:");
+            int altura = Convert.ToInt32(Console.ReadLine());
+
+            if (idade > 18 && altura > 170)
             {
-                case Estado.Q0:
-                    if (digito == '0')
-                    {
-                        estadoAtual = Estado.Q0; // Continua em Q0
-                    }
-                    else if (digito == '1')
-                    {
-                        estadoAtual = Estado.Q1; // Move para Q1
-                    }
-                    break;
+                Console.WriteLine("Você é maior de 18 anos e tem mais de 170 cm de altura.");
+            }
+            else if (idade > 18 || altura > 170)
+            {
+                if (idade > 18)
+                {
+                    Console.WriteLine("Você é maior de 18 anos.");
+                }
+                if (altura > 170)
+                {
+                    Console.WriteLine("Você tem mais de 170 cm de altura.");
+                }
+            }
+            else
+            {
+                Console.WriteLine("Você não atende a nenhum dos critérios acima.");
+            }
 
-                case Estado.Q1:
-                    if (digito == '0')
-                    {
-                        estadoAtual = Estado.Q2; // Move para Q2
-                    }
-                    else if (digito == '1')
-                    {
-                        estadoAtual = Estado.Q0; // Move para Q0
-                    }
-                    break;
-
-                case Estado.Q2:
-                    if (digito == '0')
-                    {
-                        estadoAtual = Estado.Q1; // Move para Q1
-                    }
-                    else if (digito == '1')
-                    {
-                        estadoAtual = Estado.Q2; // Continua em Q2
-                    }
-                    break;
+            if (idade == 21)
+            {
+                Console.WriteLine("Você tem exatamente 21 anos!");
+            }
+            if (idade != 21)
+            {
+                Console.WriteLine("Você não tem 21 anos.");
             }
         }
-
-        // Verifica se o estado final é Q0 (aceitação)
-        return estadoAtual == Estado.Q0;
     }
-}
+} 
 
-class Program
+
+using System;
+
+namespace ComparacaoDeValores
 {
-    static void Main()
+    class Program
     {
-        AFDMultiplosDe3 afd = new AFDMultiplosDe3();
-
-        Console.Write("Insira um número binário: ");
-        string entrada = Console.ReadLine();
-
-        bool aceito = afd.ProcessarEntrada(entrada);
-
-        if (aceito)
+        static void Main(string[] args)
         {
-            Console.WriteLine("Aceito: O número binário é múltiplo de 3.");
+            int idade = GetValidInput("Por favor, insira sua idade:");
+            int altura = GetValidInput("Por favor, insira sua altura em centímetros:");
+
+            EvaluateAndPrintMessage(idade, altura);
         }
-        else
+
+        static int GetValidInput(string message)
         {
-            Console.WriteLine("Rejeitado: O número binário não é múltiplo de 3.");
+            Console.WriteLine(message);
+            int output;
+            while (!int.TryParse(Console.ReadLine(), out output))
+            {
+                Console.WriteLine("Entrada inválida. Por favor, insira um número inteiro.");
+            }
+            return output;
+        }
+
+        static void EvaluateAndPrintMessage(int idade, int altura)
+        {
+            string message = "";
+
+            if (idade > 18 && altura > 170)
+            {
+                message = "Você é maior de 18 anos e tem mais de 170 cm de altura.";
+            }
+            else if (idade > 18 && altura <= 170)
+            {
+                message = "Você é maior de 18 anos, mas tem menos de 170 cm de altura.";
+            }
+            else if (idade <= 18 && altura > 170)
+            {
+                message = "Você é menor de 18 anos, mas tem mais de 170 cm de altura.";
+            }
+            else
+            {
+                message = "Você não atende a nenhum dos critérios acima.";
+            }
+
+            if (idade == 21)
+            {
+                message += " Você tem exatamente 21 anos!";
+            }
+            else
+            {
+                message += " Você não tem 21 anos.";
+            }
+
+            Console.WriteLine(message);
         }
     }
 }
