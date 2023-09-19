@@ -16,3 +16,11 @@ Galo (ou Galinha): 2017, 2005, 1993, 1981, 1969, 1957, etc.
 Cão: 2018, 2006, 1994, 1982, 1970, 1958, etc.
 Porco: 2019, 2007, 1995, 1983, 1971, 1959, etc.
 """
+
+
+def signo_chines(ano):
+    signo_chines = ["Rato", "Boi", "Tigre", "Coelho", "Dragão", "Serpente", "Cavalo", "Cabra", "Macaco", "Galo", "Cão", "Porco"]
+    calculo = (ano - 1900) % 12
+    return signo_chines[calculo]
+
+print(signo_chines(int(input("Digite o ano de nascimento: "))))
