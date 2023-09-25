@@ -1,0 +1,138 @@
+#### Questão 01 - 
+
+Habilidade Cobrada: Capacidade de coletar dados do usuário e mostrar informações no console.
+Projeto: Crie um programa que peça ao usuário seu nome e idade e, em seguida, exiba a mensagem "Olá [nome], você tem [idade] anos!".
+Exemplo:
+Input: Maria
+Input: 23
+Output: Olá Maria, você tem 23 anos!
+
+
+#### Questão 02
+**Cálculo do Índice de Massa Corporal (IMC)**  
+*Habilidade Cobrada:* Aplicação de fórmulas matemáticas usando entrada de dados e exibição de resultados condicionais.
+
+**Instruções:**  
+O IMC é uma ferramenta utilizada para avaliar se uma pessoa está dentro do peso ideal em relação à sua altura. Ele é calculado dividindo o peso da pessoa (em quilogramas) pela altura da pessoa ao quadrado (em metros).
+
+**Fórmula:**  
+\[ IMC = \frac{peso}{altura^2} \]
+
+1. Peça ao usuário para fornecer seu peso em quilogramas.
+2. Peça ao usuário para fornecer sua altura em metros.
+3. Calcule o IMC usando a fórmula fornecida.
+4. Exiba o IMC calculado.
+5. Adicionalmente, forneça uma interpretação do IMC calculado, usando as seguintes categorias:
+   - Abaixo do peso: IMC < 18.5
+   - Peso normal: 18.5 ≤ IMC < 24.9
+   - Sobrepeso: 24.9 ≤ IMC < 29.9
+   - Obesidade grau I: 29.9 ≤ IMC < 34.9
+   - Obesidade grau II: 34.9 ≤ IMC < 39.9
+   - Obesidade grau III: IMC ≥ 40
+
+*Exemplo:*  
+Input: Peso: `68`  
+Input: Altura: `1.75`  
+Output: `Seu IMC é 22.2. Você está com o peso normal.`
+
+*Nota:* Lembre-se de que os valores de peso e altura devem ser números positivos e diferentes de zero. Você pode incluir verificações adicionais em sua aplicação para garantir que os valores inseridos sejam válidos.
+
+### Questão 03
+
+** Manipulação Avançada de Strings e Conversão de Datatypes**  
+*Habilidade Cobrada:* Transformar e manipular datatypes, utilizando métodos de strings e outras conversões.
+
+**Instruções:**  
+Crie um programa que realize as seguintes tarefas utilizando o input do usuário:
+
+1. Peça ao usuário que forneça uma data no formato `DD/MM/YYYY` (por exemplo, `15/04/2020`).
+2. Extraia o dia, mês e ano dessa data e converta-os para inteiros.
+3. Peça ao usuário que forneça um texto qualquer.
+4. Conte e exiba o número de caracteres do texto fornecido.
+5. Converta o texto para maiúsculas e depois para uma lista de palavras (supondo que as palavras estejam separadas por espaços).
+6. Solicite ao usuário um número decimal (por exemplo, `45.67`).
+7. Converta esse número para uma string e, em seguida, substitua o ponto decimal por uma vírgula (`,`).
+
+*Exemplo:*  
+Input: Data: `15/04/2020`  
+Output: `Dia: 15, Mês: 04, Ano: 2020`  
+Input: Texto: `Python é incrível`  
+Output:   
+`O texto possui 18 caracteres.`  
+`Lista de palavras: ['PYTHON', 'É', 'INCRÍVEL']`  
+Input: Número: `45.67`  
+Output: `O número em formato string com vírgula: "45,67"`
+
+*Nota:* Este exercício abrange uma variedade de manipulações, incluindo extração e conversão de sub-strings, contagem de caracteres, conversão para maiúsculas, divisão de strings e substituição de caracteres em strings.
+
+### Questão 04 
+
+Cálculo de área e perímetro de um triângulo.
+Habilidade Cobrada: Aplicação de fórmulas matemáticas em programação.
+Projeto: Peça ao usuário as medidas de base e altura de um triângulo e calcule sua área e perímetro.
+Fórmula: Área = (base x altura) / 2
+Exemplo:
+Input: Base: 10
+Input: Altura: 5
+Output: A área do triângulo é 25.0 e o perímetro é indeterminado sem os lados restantes.
+
+
+### Questão 05 
+ontagem de Vogais em um Texto
+Habilidade Cobrada: Manipulação de strings e uso de estruturas de controle para contagem.
+
+Instruções:
+Crie um programa que realize as seguintes tarefas:
+
+Solicite ao usuário que forneça um texto qualquer.
+Analise o texto fornecido e conte quantas vezes cada vogal (a, e, i, o, u) aparece, independentemente de ser maiúscula ou minúscula.
+Exiba o resultado, mostrando a contagem para cada vogal.
+Exemplo:
+Input: Texto: A linguagem Python é intuitiva.
+Output:
+a: 3
+e: 2
+i: 3
+o: 2
+u: 2
+
+Nota: Para realizar a tarefa, o programa deve ser capaz de iterar por cada caractere do texto, verificar se é uma vogal e, em caso afirmativo, atualizar a contagem para a vogal correspondente. Lembre-se de tratar o texto de forma que ele considere vogais maiúsculas e minúsculas da mesma forma (por exemplo, convertendo todo o texto para minúsculas antes de começar a contagem).
+
+### Questão 06
+
+Uso de Conditional Statements.
+Habilidade Cobrada: Aplicação de lógica condicional para tomada de decisões.
+Projeto: Peça ao usuário um número e informe se é positivo, negativo ou zero.
+Exemplo:
+Input: -3
+Output: O número é negativo.
+
+### Questão 7. For loop.
+Habilidade Cobrada: Uso de loops para repetir tarefas.
+Projeto: Exiba os primeiros 10 números naturais usando um loop for.
+Exemplo:
+Output: 0 1 2 3 4 5 6 7 8 9
+
+### Questão 8. Métodos de manipulação de strings.
+Habilidade Cobrada: Modificar e ajustar strings usando métodos predefinidos.
+Projeto: Peça ao usuário que insira uma palavra e exiba essa palavra em maiúsculas, minúsculas e com a primeira letra em maiúscula.
+Exemplo:
+Input: Python
+Output:
+PYTHON
+python
+Python
+
+### Questão 9. Listas e seus índices.
+Habilidade Cobrada: Manipular listas e acessar seus elementos.
+Projeto: Crie uma lista de 5 frutas. Peça ao usuário um índice e mostre a fruta correspondente.
+Exemplo:
+Lista: ["maçã", "banana", "cereja", "laranja", "manga"]
+Input: 2
+Output: A fruta no índice 2 é cereja.
+
+# Questão 10. For loops e While loops.
+Habilidade Cobrada: Utilização de diferentes tipos de loops.
+Projeto: Use um loop for para exibir números de 1 a 5 e um loop while para exibir números de 6 a 10.
+Exemplo:
+Output: 1 2 3 4 5 6 7 8 9 10
