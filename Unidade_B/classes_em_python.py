@@ -11,4 +11,5 @@ exibir_informacoes(): Mostra todas as informações sobre o carro.
 vender(): Marca o carro como vendido.
 ajustar_preco(novo_preco): Ajusta o preço do carro para o valor especificado.
 
+Instancie pelo menos 5 objetos.
 """

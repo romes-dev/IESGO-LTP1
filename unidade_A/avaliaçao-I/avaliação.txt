@@ -8,6 +8,8 @@ Input: 23
 Output: Olá Maria, você tem 23 anos!
 
 
+
+
 #### Questão 02
 **Cálculo do Índice de Massa Corporal (IMC)**  
 *Habilidade Cobrada:* Aplicação de fórmulas matemáticas usando entrada de dados e exibição de resultados condicionais.
