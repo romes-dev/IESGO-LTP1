@@ -1,106 +1,54 @@
 ﻿using System;
+using System.Collections.Generic;
 
-namespace ComparacaoDeValores
+public class Livro 
 {
-    class Program
+    public string Titulo { get; set; }
+    public string Autor { get; set; }
+    public string ISBN { get; set; }
+
+    public void ExibirDetalhes()
     {
-        static void Main(string[] args)
+        Console.WriteLine($"Título: {Titulo}");
+        Console.WriteLine($"Autor: {Autor}");
+        Console.WriteLine($"ISBN: {ISBN}");
+    }
+}
+
+public class Biblioteca
+{
+    private List<Livro> livros = new List<Livro>();
+
+    public void AdicionarLivro(Livro livro)
+    {
+        livros.Add(livro);
+    }
+
+    public void ExibirLivros()
+    {
+        foreach(var livro in livros)
         {
-            Console.WriteLine("Por favor, insira sua idade:");
-            int idade = Convert.ToInt32(Console.ReadLine());
-
-            Console.WriteLine("Por favor, insira sua altura em centímetros:");
-            int altura = Convert.ToInt32(Console.ReadLine());
-
-            if (idade > 18 && altura > 170)
-            {
-                Console.WriteLine("Você é maior de 18 anos e tem mais de 170 cm de altura.");
-            }
-            else if (idade > 18 || altura > 170)
-            {
-                if (idade > 18)
-                {
-                    Console.WriteLine("Você é maior de 18 anos.");
-                }
-                if (altura > 170)
-                {
-                    Console.WriteLine("Você tem mais de 170 cm de altura.");
-                }
-            }
-            else
-            {
-                Console.WriteLine("Você não atende a nenhum dos critérios acima.");
-            }
-
-            if (idade == 21)
-            {
-                Console.WriteLine("Você tem exatamente 21 anos!");
-            }
-            if (idade != 21)
-            {
-                Console.WriteLine("Você não tem 21 anos.");
-            }
+            Console.WriteLine("#####################");
+            livro.ExibirDetalhes();
+            Console.WriteLine("#####################");
         }
     }
-} 
+}
 
-
-using System;
-
-namespace ComparacaoDeValores
+public class Program
 {
-    class Program
+    public static void Main()
     {
-        static void Main(string[] args)
-        {
-            int idade = GetValidInput("Por favor, insira sua idade:");
-            int altura = GetValidInput("Por favor, insira sua altura em centímetros:");
+        var livro01 = new Livro 
+        { 
+            Titulo = "Harry Potter and the Cursed Child - Parts One and Two (Special Rehearsal Edition)", 
+            Autor = "J. K. Rowling", 
+            ISBN = "1234-9843"  
+        }; 
 
-            EvaluateAndPrintMessage(idade, altura);
-        }
+        var biblioteca = new Biblioteca();
+        biblioteca.AdicionarLivro(livro01);
 
-        static int GetValidInput(string message)
-        {
-            Console.WriteLine(message);
-            int output;
-            while (!int.TryParse(Console.ReadLine(), out output))
-            {
-                Console.WriteLine("Entrada inválida. Por favor, insira um número inteiro.");
-            }
-            return output;
-        }
-
-        static void EvaluateAndPrintMessage(int idade, int altura)
-        {
-            string message = "";
-
-            if (idade > 18 && altura > 170)
-            {
-                message = "Você é maior de 18 anos e tem mais de 170 cm de altura.";
-            }
-            else if (idade > 18 && altura <= 170)
-            {
-                message = "Você é maior de 18 anos, mas tem menos de 170 cm de altura.";
-            }
-            else if (idade <= 18 && altura > 170)
-            {
-                message = "Você é menor de 18 anos, mas tem mais de 170 cm de altura.";
-            }
-            else
-            {
-                message = "Você não atende a nenhum dos critérios acima.";
-            }
-
-            if (idade == 21)
-            {
-                message += " Você tem exatamente 21 anos!";
-            }
-            else
-            {
-                message += " Você não tem 21 anos.";
-            }
-
-            Console.WriteLine(message);
-        }
+        biblioteca.ExibirLivros(); 
     }
 }
