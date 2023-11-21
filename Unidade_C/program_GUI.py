@@ -1,8 +1,10 @@
+# PRograma com registro de nome e emails.
+
 import sqlite3
 import tkinter as tk
 from tkinter import ttk
 
-# Create a SQLite database and a users table
+# Criar um banco de dados SQLite e uma tabela de usuários
 conn = sqlite3.connect('user_database.db')
 cursor = conn.cursor()
 cursor.execute('''
@@ -14,7 +16,7 @@ cursor.execute('''
 ''')
 conn.commit()
 
-class UserManagementApp:
+class AplicativoGestaoUsuarios:
     def __init__(self, root):
         self.root = root
         self.root.title("App de Gestão de Usuários")
@@ -25,65 +27,65 @@ class UserManagementApp:
         self.tree.heading('Email', text='E-mail')
         self.tree.pack(padx=10, pady=10)
 
-        self.load_data()
+        self.carregar_dados()
 
-        add_button = tk.Button(root, text='Adicionar', command=self.show_add_user_window)
-        add_button.pack(pady=10)
+        botao_adicionar = tk.Button(root, text='Adicionar', command=self.mostrar_janela_adicionar_usuario)
+        botao_adicionar.pack(pady=10)
 
-        delete_button = tk.Button(root, text='Remover', command=self.delete_user)
-        delete_button.pack(pady=10)
+        botao_remover = tk.Button(root, text='Remover', command=self.remover_usuario)
+        botao_remover.pack(pady=10)
 
-    def load_data(self):
-        # Fetch data from the database and populate the treeview
+    def carregar_dados(self):
+        # Buscar dados do banco de dados e popular o treeview
         cursor.execute('SELECT * FROM users')
-        rows = cursor.fetchall()
-        for row in rows:
-            self.tree.insert('', 'end', values=row)
+        linhas = cursor.fetchall()
+        for linha in linhas:
+            self.tree.insert('', 'end', values=linha)
 
-    def show_add_user_window(self):
-        add_user_window = tk.Toplevel(self.root)
-        add_user_window.title('Add User')
+    def mostrar_janela_adicionar_usuario(self):
+        janela_adicionar_usuario = tk.Toplevel(self.root)
+        janela_adicionar_usuario.title('Adicionar Usuário')
 
-        username_label = tk.Label(add_user_window, text='Username:')
-        username_label.grid(row=0, column=0, padx=10, pady=10)
-        username_entry = tk.Entry(add_user_window)
-        username_entry.grid(row=0, column=1, padx=10, pady=10)
+        rotulo_usuario = tk.Label(janela_adicionar_usuario, text='Usuário:')
+        rotulo_usuario.grid(row=0, column=0, padx=10, pady=10)
+        entrada_usuario = tk.Entry(janela_adicionar_usuario)
+        entrada_usuario.grid(row=0, column=1, padx=10, pady=10)
 
-        email_label = tk.Label(add_user_window, text='Email:')
-        email_label.grid(row=1, column=0, padx=10, pady=10)
-        email_entry = tk.Entry(add_user_window)
-        email_entry.grid(row=1, column=1, padx=10, pady=10)
+        rotulo_email = tk.Label(janela_adicionar_usuario, text='E-mail:')
+        rotulo_email.grid(row=1, column=0, padx=10, pady=10)
+        entrada_email = tk.Entry(janela_adicionar_usuario)
+        entrada_email.grid(row=1, column=1, padx=10, pady=10)
 
-        save_button = tk.Button(add_user_window, text='Save', command=lambda: self.save_user(username_entry.get(), email_entry.get(), add_user_window))
-        save_button.grid(row=2, columnspan=2, pady=10)
+        botao_salvar = tk.Button(janela_adicionar_usuario, text='Salvar', command=lambda: self.salvar_usuario(entrada_usuario.get(), entrada_email.get(), janela_adicionar_usuario))
+        botao_salvar.grid(row=2, columnspan=2, pady=10)
 
-    def save_user(self, username, email, window):
-        # Save user to the database
-        cursor.execute('INSERT INTO users (username, email) VALUES (?, ?)', (username, email))
+    def salvar_usuario(self, usuario, email, janela):
+        # Salvar usuário no banco de dados
+        cursor.execute('INSERT INTO users (username, email) VALUES (?, ?)', (usuario, email))
         conn.commit()
 
-        # Update the treeview with the new user
-        self.tree.insert('', 'end', values=(cursor.lastrowid, username, email))
+        # Atualizar o treeview com o novo usuário
+        self.tree.insert('', 'end', values=(cursor.lastrowid, usuario, email))
 
-        # Close the add user window
-        window.destroy()
+        # Fechar a janela de adicionar usuário
+        janela.destroy()
 
-    def delete_user(self):
-        selected_item = self.tree.selection()
-        if selected_item:
-            user_id = self.tree.item(selected_item)['values'][0]
-            cursor.execute('DELETE FROM users WHERE id=?', (user_id,))
+    def remover_usuario(self):
+        item_selecionado = self.tree.selection()
+        if item_selecionado:
+            id_usuario = self.tree.item(item_selecionado)['values'][0]
+            cursor.execute('DELETE FROM users WHERE id=?', (id_usuario,))
             conn.commit()
 
-            # Remove the selected user from the treeview
-            self.tree.delete(selected_item)
+            # Remover o usuário selecionado do treeview
+            self.tree.delete(item_selecionado)
         else:
-            tk.messagebox.showinfo('Error', 'Selcione um usuário para remover da lista.')
+            tk.messagebox.showinfo('Erro', 'Selecione um usuário para remover da lista.')
 
 if __name__ == "__main__":
     root = tk.Tk()
-    app = UserManagementApp(root)
+    app = AplicativoGestaoUsuarios(root)
     root.mainloop()
 
-# Close the database connection when the application is closed
+# Fechar a conexão com o banco de dados quando a aplicação for fechada
 conn.close()
