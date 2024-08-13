@@ -8,15 +8,15 @@ Idade: .....
 
 # Criar uma variável para alocar o nome coletado no terminal input()
 
-nome = "João"
+nome = input("Insira o seu nome: ")
 
 # criar uma variável para alocar o sobrenome
 
-sobrenome = "Silva"
+sobrenome = input("Insira o seu sobrenome: ") 
 
 # Criar uma variável para alocar a idade
 
-idade = "30" #string
+idade = input("Insira sua idade: ") 
 
 # Imprimir os dados no terminal
 
