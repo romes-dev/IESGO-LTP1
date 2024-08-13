@@ -1,0 +1,9 @@
+nome = input("insira seu nome!")
+
+matricula = input("insira seu número de matricula!")
+
+curso = input("insira seu curso matriculado!")
+
+print = ("nome " + nome)
+print = ("matricula" + matricula)
+print = ("curso " + curso)
