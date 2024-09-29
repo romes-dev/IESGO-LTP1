@@ -8,7 +8,7 @@ import android.database.sqlite.SQLiteOpenHelper;
 
 public class DatabaseHelper extends SQLiteOpenHelper {
 
-    private static final String DATABASE_NAME = "simulatedData.db";
+    private static final String DATABASE_NAME = "clientesData.db";
     private static final String TABLE_NAME = "people_table";
     private static final String COL_1 = "ID";
     private static final String COL_2 = "NAME";
@@ -30,11 +30,11 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         onCreate(db);
     }
 
-    private void insertSimulatedData(SQLiteDatabase db) {
+    private void insertClientesData(SQLiteDatabase db) {
         insertData(db, "Alice", "alice@example.com");
         insertData(db, "Bob", "bob@example.com");
-        insertData(db, "Charlie", "charlie@example.com");
-        insertData(db, "David", "david@example.com");
+        insertData(db, "Joaquim", "joaquim@example.com");
+        insertData(db, "Maria", "maria@example.com");
         insertData(db, "Eva", "eva@example.com");
     }
 
